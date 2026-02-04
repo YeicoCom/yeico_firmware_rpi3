@@ -4,11 +4,6 @@ SELF=$(realpath $0)
 DIR=$(dirname $SELF)
 TARGET=$(cat $DIR/yeico.target)
 
-export MEMSTOP_PERCENT=20
-export LD_PRELOAD=/usr/local/lib/memstop.so
-[ -f $LD_PRELOAD ] || echo Not found $LD_PRELOAD
-[ -f $LD_PRELOAD ] || exit 1
-
 case "$1" in
     clean)
     cd $(dirname $SELF)
